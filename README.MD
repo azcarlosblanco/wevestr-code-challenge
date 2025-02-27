@@ -41,7 +41,7 @@ npm install
 
 You can run both applications using one of these methods:
 
-#### Method 1: Using the start scripts in the root directory
+#### Method 1: Using the start scripts in the root directory (in different terminals)
 
 ```bash
 chmod +x start-server.sh
@@ -50,7 +50,7 @@ chmod +x start-client.sh
 ./start-client.sh
 ```
 
-#### Method 2: Manually running the applications
+#### Method 2: Manually running the applications (in different terminals)
 
 ```bash
 cd client
@@ -80,6 +80,7 @@ The server-side application uses Jest for testing. To run the tests:
 
 ```bash
 cd server
+npm test
 ```
 
 ## Implementation Details
