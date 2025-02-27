@@ -1,13 +1,14 @@
 import sqlite3 from 'sqlite3';
 import path from 'path';
 
-const dbPath = path.resolve(__dirname, '../../database.sqlite');
+const isTest = process.env.NODE_ENV === 'test';
+const dbPath = path.resolve(__dirname, isTest ? '../../test-database.sqlite' : '../../database.sqlite');
 
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Error connecting to database:', err);
   } else {
-    console.log('Connected to SQLite database');
+    console.log(`Connected to SQLite database (${isTest ? 'test' : 'development'})`);
     createTasksTable();
   }
 });
